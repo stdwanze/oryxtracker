@@ -1,0 +1,2 @@
+2022-03-15;Russia - 1308, of which: destroyed: 554, damaged: 19, abandoned: 207, captured: 528;Ukraine - 356, of which: destroyed: 134, damaged: 5, abandoned: 47, captured: 170
+2022-03-17;Russia - 1380, of which: destroyed: 598, damaged: 20, abandoned: 211, captured: 551;Ukraine - 362, of which: destroyed: 135, damaged: 5, abandoned: 48, captured: 174
