@@ -7,7 +7,7 @@ function toCSV(found){
     yourDate = new Date(yourDate.getTime() - (offset*60*1000))
     let date = yourDate.toISOString().split('T')[0]
     let f = found.join(";");
-    f = date+";"+f;
+    f = "\n"+date+";"+f;
     return f;
 }
 
