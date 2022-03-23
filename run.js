@@ -1,14 +1,14 @@
 const loader = require('./getData');
 const parser = require('./parseData');
-const fs = require('fs')
-const f = require('./format');
 
+const f = require('./format');
+const c = require('./io');
 
 
 loader.loadoryx(function (d){
-   let found = parser.parse(d);
+   let found = parser.parseBasic(d);
+   let properpared = parser.parseAdvanced(found);
    let formatted = f.toCSV(found);
-   fs.appendFile('lost.txt', formatted, function (err) {
-      if (err) throw err;
-    });
+   c.writeToFile(formatted)
+   c.savelast(properpared);
 });
