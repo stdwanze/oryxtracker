@@ -19,7 +19,8 @@ function parseAdvanced(found){
     let parsed = [];
     parsed.push(matchLine(found[0]));
     parsed.push(matchLine(found[1]));
-    return parsed;
+    let content = { data: parsed, timestamp:  yourDate.toISOString().split('T')[0] };
+    return content;
 }
 
 function matchLine(line){
