@@ -19,7 +19,9 @@ function parseAdvanced(found){
     let parsed = [];
     parsed.push(matchLine(found[0]));
     parsed.push(matchLine(found[1]));
-    let yourDate = new Date(yourDate.getTime() - (offset*60*1000))
+    let yourDate = new Date();
+    const offset = yourDate.getTimezoneOffset()
+    yourDate = new Date(yourDate.getTime() - (offset*60*1000))
     let content = { data: parsed, timestamp:  yourDate.toISOString().split('T')[0] };
     return content;
 }
