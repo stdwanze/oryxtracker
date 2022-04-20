@@ -46,5 +46,6 @@ function matchLine(line){
 
 module.exports = {
     parseBasic,
-    parseAdvanced
+    parseAdvanced,
+    matchLine
 }

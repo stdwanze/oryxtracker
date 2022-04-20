@@ -12,6 +12,7 @@
   "dependencies": {
     "fast-xml-parser": "^4.0.6",
     "https": "^1.0.0",
-    "polka": "^0.5.2"
+    "polka": "^0.5.2",
+    "util": "^0.12.4"
   }
 }
