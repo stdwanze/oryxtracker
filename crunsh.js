@@ -49,7 +49,7 @@ function reduceToValue(full){
 
 async function dailyDiff(){
 
-    let ddiff = [];
+    let ddiff = ["date;totaldiff;change;ruschange;ukrchange"];
     let lastdiff = 0;
     let loaded =  await loaddata();
     var russ = reduceToSingularDays(loaded.russdata);
@@ -57,12 +57,30 @@ async function dailyDiff(){
     russ = reduceToValue(russ);
     ukr = reduceToValue(ukr);
 
+
     for(let i = 0; i < russ.length; i++){
         let russsplit = russ[i].split(";");
         let ukrsplit = ukr[i].split(";");
+
+        let russdiff = 0;
+        let ukrdiff = 0;
+
+        if(i > 1){
+            let russsplitold = russ[i-1].split(";");
+            let ukrsplitold = ukr[i-1].split(";");
+
+            russdiff = russsplit[1]-russsplitold[1];
+            ukrdiff = ukrsplit[1]-ukrsplitold[1];
+
+        }
         let diff = russsplit[1]-ukrsplit[1];
         let change = diff-lastdiff;
-        ddiff.push(russsplit[0]+ ";"+ diff+";"+change);
+
+        let retdata = [russsplit[0],diff,change,russdiff,ukrdiff];
+       // ddiff.push(russsplit[0]+ ";"+ diff+";"+change+"");
+
+        ddiff.push(retdata.join(";"));
+
         lastdiff = diff;
     }
 
